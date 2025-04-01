@@ -22,7 +22,7 @@ export default function Cube3D() {
     console.log(materials)
 
     return (
-        <div id='canvas-container'>
+        <div id='canvas-container' className={"h-[20rem]"}>
             <Canvas camera={{ position: [-1, 3, -10], fov: 30, near: 1, far: 150 }}>
                 <CubeMesh rotation={[0, 0, Math.PI / 2.0]} position={[0, 0, 0]} />
                 <ambientLight intensity={1.5} />
