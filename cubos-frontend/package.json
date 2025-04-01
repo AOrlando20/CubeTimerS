@@ -11,6 +11,7 @@
   "dependencies": {
     "@react-three/drei": "^10.0.5",
     "@react-three/fiber": "^9.1.0",
+    "axios": "^1.8.4",
     "material-symbols": "^0.29.2",
     "next": "15.2.3",
     "react": "^19.0.0",
