@@ -1,6 +1,6 @@
 'use client'
 
-import { createContext } from "react"
+import { createContext, SetStateAction, Dispatch } from "react"
 
 export type AppElements = {
     scramblebar_text?: string,
@@ -8,5 +8,21 @@ export type AppElements = {
 }
 export type AppTheme = 'light' | 'dark';
 
-export const ThemeContext = createContext<AppTheme>('light');
-export const AppContext = createContext<AppElements>({});
+export type AppElementsState = {
+    appElements: AppElements
+    setAppElements: Dispatch<SetStateAction<AppElements>>
+} | null
+
+export type AppThemeState = {
+    appTheme: AppTheme,
+    setAppTheme: Dispatch<SetStateAction<AppTheme>>
+} | null
+
+
+interface CubeType {
+    type: string
+}
+
+
+export const ThemeContext = createContext<AppThemeState>(null);
+export const AppContext = createContext<AppElementsState>(null);
