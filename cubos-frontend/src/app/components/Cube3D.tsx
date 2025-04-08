@@ -3,13 +3,9 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei"
 
-/*
- * 
- * 
-*/
 
-function CubeMesh(props: CubeMeshProps) {
-    const { nodes } = useGLTF("/rubik_cube/rubik_v2.glb")
+function CubeMesh(props: any) {
+    const { nodes } = useGLTF("/rubik_cube/rubik_v3.glb")
     
     return (
         <>

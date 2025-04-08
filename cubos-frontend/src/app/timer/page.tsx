@@ -1,17 +1,18 @@
 "use client"
 import Sidebar from "@/app/components/Sidebar";
-import { Onest } from "next/font/google";
+import { Onest, Inter } from "next/font/google";
 import ScrambleCube3D from "./components/ScrambleCube3D";
 
 import RubikIcon from "../../../public/rubik_icon.png"
-import Image from "next/image";
 import { useEffect, useContext, useState } from "react";
-import { AppElements, AppContext, AppElementsState } from "../context/contexts";
-import { ScrambleService } from "./service/ScrambleService";
+import { AppElements, AppContext, AppElementsState } from "@/context/contexts";
+import { ScrambleService } from "../../service/ScrambleService";
 
 const onest_600 = Onest({weight: '600'})
 const onest_500 = Onest({weight: '500'})
 const onest_300 = Onest({weight: '300'})
+
+const inter_400 = Inter({weight: '400'})
 
 export default function Timer() {
     const { appElements, setAppElements } = useContext<AppElementsState>(AppContext);
@@ -39,7 +40,7 @@ export default function Timer() {
 
 
     return (
-    <div className={"flex flex-col"}>
+    <div className={"flex flex-col text-white"}>
         <aside id="left-sidebar" className={"flex flex-col w-[30%] h-[100vh] float-left fixed"}>
             <div className={`h-auto py-2  bg-[#36454F] flex justify-center items-center text-[4rem] ${onest_600.className}`}>
                 <h3 className={`${onest_600.className}`}>XD_perm</h3>
@@ -88,11 +89,14 @@ export default function Timer() {
                     }
                     }>Nuevo</button>
             </div>
-            <div className="h-[35rem]">
-                <ScrambleCube3D/>
+            <div className={"flex flex-col h-[full] w-[100%] align-middle text-center"}>
+                <h3 className={`text-5xl text-black ${inter_400.className}`}>Solve 15</h3>
+                <h1 className={`text-8xl text-black font-bold ${inter_400.className}`}>13.45</h1>
+                <div className={`text-black ${inter_400.className}`}>Ao.5: 16.00</div>
+                <div className={`text-black ${inter_400.className}`}>Ao.12: 18.00</div>
             </div>
-            <div className={""}>
-
+            <div className="h-[10rem]">
+                <ScrambleCube3D/>
             </div>
         </div>
     </div>)

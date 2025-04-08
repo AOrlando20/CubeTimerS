@@ -2,7 +2,7 @@
 
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei"
-import { AppContext, AppElementsState } from "@/app/context/contexts";
+import { AppContext, AppElementsState } from "@/context/contexts";
 import { useContext, useEffect, useRef, useState } from "react";
 import { Canvas as CanvasPG, Type } from "sr-puzzlegen";
 import { TextureLoader } from "three";

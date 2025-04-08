@@ -2,8 +2,9 @@
 
 import "./globals.css";
 
-import { AppContext, AppElements, AppTheme, ThemeContext } from "@/app/context/contexts"
 import Script from "next/script";
+
+import { AppContext, AppElements, AppTheme, ThemeContext } from "@/context/contexts"
 import { useEffect, useState } from "react";
 
 export default function RootLayout({
@@ -22,6 +23,10 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+        <Script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></Script>
+        <Script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.net.min.js"></Script>
+      </head>
       <body>
         <ThemeContext.Provider value={{ appTheme, setAppTheme }}>
           <AppContext.Provider value={{ appElements, setAppElements }}>
