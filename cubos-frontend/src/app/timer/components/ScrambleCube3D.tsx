@@ -70,11 +70,12 @@ const Cube3D = ({ hidden, scrambleTexture, meshRef }: Cube3DProps) => {
 
 
 interface ScrambleCube3DProps {
+    hide: boolean,
     scramble: string
 }
 
 
-export default function ScrambleCube3D({ scramble }: ScrambleCube3DProps) {
+export default function ScrambleCube3D({ scramble, hide = false }: ScrambleCube3DProps) {
     const [ currentMode, setCurrentMode ] = useState<DisplayMode>(DisplayMode.Mode3D);
     const [ hideScramble, setHideScramble ] = useState<boolean>(true);
     const stickerMeshRef = useRef(null);
@@ -91,7 +92,7 @@ export default function ScrambleCube3D({ scramble }: ScrambleCube3DProps) {
     }    
 
     return (
-        <div className={`absolute right-0 bottom-0 flex justify-end h-fit w-[100%] mb-3 mr-3`}>
+        <div hidden={hide} className={`absolute right-0 bottom-0 flex justify-end h-fit w-[100%] mb-3 mr-3`} style={{ zIndex: 30 }}>
             <div onClick={() => setHideScramble(p => false)} hidden={!hideScramble} className="bg-slate-800 p-4 border-4 shadow-2xl rounded-3xl w-[5.5%] aspect-square hover:cursor-pointer">
                 <Image src={LogoPNG} alt={["Scramble:", scramble].join(" ")} />
             </div>
